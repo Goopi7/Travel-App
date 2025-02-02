@@ -9,12 +9,13 @@ const categoryDataAddedToDB =require("./routes/categoryimportdata-router")
 const singleHotelRouter = require("./routes/singleHotel-router")
 const authRouter = require("./routes/user-router")
 const WishlistRouter = require("./routes/wishlist-router")
+const cors=require("cors");
 
 const app = express();
 
 dotenv.config();
 const PORT = 3200;
-
+app.use(cors());
 app.use(express.json());
 connectDB();
 app.get("/",(req,res) =>{
